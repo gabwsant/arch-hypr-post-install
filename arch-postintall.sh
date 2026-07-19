@@ -20,16 +20,19 @@ source ./config.conf
 
 chmod +x ./scripts/*.sh
 
-echo -e "${GREEN}[1/4] Configuring system...${ENDCOLOR}"
+echo -e "${GREEN}[1/5] Configuring system...${ENDCOLOR}"
 ./scripts/01-system.sh
 
-echo -e "${GREEN}[2/4] Installing AUR Helper...${ENDCOLOR}"
+echo -e "${GREEN}[2/5] Installing AUR Helper...${ENDCOLOR}"
 ./scripts/02-aur.sh
 
-echo -e "${GREEN}[3/4] Installing Hyprland ecosystem packages...${ENDCOLOR}"
+echo -e "${GREEN}[3/5] Installing Hyprland...${ENDCOLOR}"
+./scripts/03-hyprland.sh
+
+echo -e "${GREEN}[4/5] Installing packages...${ENDCOLOR}"
 ./scripts/03-packages.sh
 
-echo -e "${GREEN}[4/4] Applying dotfiles...${ENDCOLOR}"
+echo -e "${GREEN}[5/5] Applying dotfiles...${ENDCOLOR}"
 ./scripts/04-dotfiles.sh
 
 echo -e "${BLUE}Post-installation completed! Please reboot the system.${ENDCOLOR}"
